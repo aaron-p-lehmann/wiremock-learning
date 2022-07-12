@@ -25,8 +25,8 @@ In order to run the calculator program:
 ## Setup
 
 The docker-compose.yml file will set up the containers for the project.
-containers named "flask_<whatever>" are the program itself, while containers
-named "<whatever>" are the wiremock proxies.
+containers named "flask_[whatever]" are the program itself, while containers
+named "[whatever]" are the wiremock proxies.
 
 ## Framework documentation
 
