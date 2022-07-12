@@ -21,3 +21,15 @@ In order to run the calculator program:
 	docker-compose up
 	```
 * You can access the calculator program at 0.0.0.0:5000.
+
+## Setup
+
+The docker-compose.yml file will set up the containers for the project.
+containers named "flask_<whatever>" are the program itself, while containers
+named "<whatever>" are the wiremock proxies.
+
+## Framework documentation
+
+Flask and wiremock documentation can be found here:
+* Flask - https://flask.palletsprojects.com/en/2.1.x/
+* Wiremock - https://wiremock.org/docs/

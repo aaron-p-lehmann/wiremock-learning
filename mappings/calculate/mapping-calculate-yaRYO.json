@@ -1,0 +1,17 @@
+{
+  "id" : "8db729c0-7807-3953-acbe-3ee73bd875d4",
+  "request" : {
+    "url" : "/calculate?expression=1%2B1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "body-calculate-yaRYO.txt",
+    "headers" : {
+      "Server" : "Werkzeug/2.1.2 Python/3.10.5",
+      "Date" : "Tue, 12 Jul 2022 20:39:46 GMT",
+      "Content-Type" : "text/html; charset=utf-8"
+    }
+  },
+  "uuid" : "8db729c0-7807-3953-acbe-3ee73bd875d4"
+}

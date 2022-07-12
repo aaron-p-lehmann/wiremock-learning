@@ -1,0 +1,17 @@
+{
+  "id" : "d9dfacd9-48f7-3abf-8db2-3fbb5aed6f29",
+  "request" : {
+    "url" : "/mult?expression=2",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "body-mult-bv8gJ.txt",
+    "headers" : {
+      "Server" : "Werkzeug/2.1.2 Python/3.10.5",
+      "Date" : "Tue, 12 Jul 2022 20:38:47 GMT",
+      "Content-Type" : "text/html; charset=utf-8"
+    }
+  },
+  "uuid" : "d9dfacd9-48f7-3abf-8db2-3fbb5aed6f29"
+}

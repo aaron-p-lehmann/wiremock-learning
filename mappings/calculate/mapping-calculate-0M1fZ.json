@@ -1,0 +1,17 @@
+{
+  "id" : "0533f5d5-2163-38d7-9899-f291b1dbfd98",
+  "request" : {
+    "url" : "/calculate?expression=%281%2B1%29",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "body-calculate-0M1fZ.txt",
+    "headers" : {
+      "Server" : "Werkzeug/2.1.2 Python/3.10.5",
+      "Date" : "Tue, 12 Jul 2022 20:38:47 GMT",
+      "Content-Type" : "text/html; charset=utf-8"
+    }
+  },
+  "uuid" : "0533f5d5-2163-38d7-9899-f291b1dbfd98"
+}

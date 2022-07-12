@@ -1,34 +1,35 @@
 version: '3.9'
 
 services:
-  add:
+  # The following are microservice containers for the calculator application
+  flask_add:
     command: ["flask", "run", "--host=0.0.0.0", "--port=80"]
     environment:
       - FLASK_APP=calculator
       - FLASK_ENV=development
     image: flask
-    container_name: add
-  calculate:
+    container_name: flask_add
+  flask_calculate:
     command: ["flask", "run", "--host=0.0.0.0", "--port=80"]
     environment:
       - FLASK_APP=calculator
       - FLASK_ENV=development
     image: flask
-    container_name: calculate
-  mult:
+    container_name: flask_calculate
+  flask_mult:
     command: ["flask", "run", "--host=0.0.0.0", "--port=80"]
     environment:
       - FLASK_APP=calculator
       - FLASK_ENV=development
     image: flask
-    container_name: mult
-  parens:
+    container_name: flask_mult
+  flask_parens:
     command: ["flask", "run", "--host=0.0.0.0", "--port=80"]
     environment:
       - FLASK_APP=calculator
       - FLASK_ENV=development
     image: flask
-    container_name: parens
+    container_name: flask_parens
   wiremock:
     command: ["flask", "run", "--host=0.0.0.0"]
     environment:
@@ -38,3 +39,37 @@ services:
     container_name: wiremock
     ports:
       - "5000:5000"
+
+  # The following are wiremock contianers for stubbing out the application
+  add:
+    #command: ["--port=80", "--proxy-all=http://flask_add", "--record-mappings"] # proxy unknown commands and record them into the mappings directories
+    command: ["--port=80"] # return results that match known requests
+    image: wiremock/wiremock:2.33.2
+    container_name: add
+    volumes:
+      - "./mappings/add:/home/wiremock/mappings"
+      - "./files/add:/home/wiremock/__files"
+  calculate:
+    #command: ["--port=80", "--proxy-all=http://flask_calculate", "--record-mappings"] # proxy unknown commands and record them into the mappings directories
+    command: ["--port=80"] # return results that match known requests
+    image: wiremock/wiremock:2.33.2
+    container_name: calculate
+    volumes:
+      - "./mappings/calculate:/home/wiremock/mappings"
+      - "./files/calculate:/home/wiremock/__files"
+  mult:
+    #command: ["--port=80", "--proxy-all=http://flask_mult", "--record-mappings"] # proxy unknown commands and record them into the mappings directories
+    command: ["--port=80"] # return results that match known requests
+    image: wiremock/wiremock:2.33.2
+    container_name: mult
+    volumes:
+      - "./mappings/mult:/home/wiremock/mappings"
+      - "./files/mult:/home/wiremock/__files"
+  parens:
+    #command: ["--port=80", "--proxy-all=http://flask_parens", "--record-mappings"] # proxy unknown commands and record them into the mappings directories
+    command: ["--port=80"] # return results that match known requests
+    image: wiremock/wiremock:2.33.2
+    container_name: parens
+    volumes:
+      - "./mappings/parens:/home/wiremock/mappings"
+      - "./files/parens:/home/wiremock/__files"
