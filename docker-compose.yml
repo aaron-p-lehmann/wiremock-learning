@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  add:
+    command: ["flask", "run", "--host=0.0.0.0", "--port=80"]
+    environment:
+      - FLASK_APP=calculator
+      - FLASK_ENV=development
+    image: flask
+    container_name: add
+  calculate:
+    command: ["flask", "run", "--host=0.0.0.0", "--port=80"]
+    environment:
+      - FLASK_APP=calculator
+      - FLASK_ENV=development
+    image: flask
+    container_name: calculate
+  mult:
+    command: ["flask", "run", "--host=0.0.0.0", "--port=80"]
+    environment:
+      - FLASK_APP=calculator
+      - FLASK_ENV=development
+    image: flask
+    container_name: mult
+  parens:
+    command: ["flask", "run", "--host=0.0.0.0", "--port=80"]
+    environment:
+      - FLASK_APP=calculator
+      - FLASK_ENV=development
+    image: flask
+    container_name: parens
+  wiremock:
+    command: ["flask", "run", "--host=0.0.0.0"]
+    environment:
+      - FLASK_APP=calculator
+      - FLASK_ENV=development
+    image: flask
+    container_name: wiremock
+    ports:
+      - "5000:5000"

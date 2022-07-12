@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Calculator</title>
+{% if result %}
+  <p>Result from previous expression {{ result }}</p>
+{% endif %}
+<p>Create an expression using addition, subtraction, multiplication, division, or parenthesis</p>
+<div>
+  <form method="POST">
+    <input type="text" name="expression">
+    <input type="submit">
+  </form>
+</div>
